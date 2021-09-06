@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+
+    <title>Greek Residential RE Listings</title>
+
+</head>
+<body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script crossorigin="anonymous"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<h2>{{listing.hometype}}: {{listing.address}}</h2>
+
+<iframe
+        allowfullscreen
+        frameborder="0"
+        height="400" src="{{ geoloc }}"
+        style="border:0" width="60%">
+</iframe>
+<table style="width:35%">
+
+    <tr>
+        <th>Price:</th>
+        <td>{{listing.price|floatformat:"0"}}</td>
+        <th>Price / sqm:</th>
+        <td>{{listing.pricepersqm|floatformat:"0"}}</td>
+    </tr>
+    <tr>
+        <th>Model price:</th>
+        <td>{{listing.price_p|floatformat:"0"}}</td>
+        <th>Model price / sqm</th>
+        <td>{{listing.pricepersqm_p|floatformat:"0"}}</td>
+    </tr>
+
+    </table>
+<br>
+<table style="width:50%">
+    <tr>
+        <th>Address</th>
+        <td>{{listing.address}}</td>
+    </tr>
+    <tr>
+        <th>Postal Code</th>
+        <td>{{listing.postal_code}}</td>
+
+    <tr>
+        <tr>
+        <th>Area (sqm)</th>
+        <td>{{listing.area|floatformat:"0"}}</td>
+    </tr>
+        <th>Floor</th>
+        <td>{{listing.floor|floatformat:"0"}}</td>
+
+    <tr>
+        <th>Heating</th>
+        <td>{{listing.heating}}</td>
+
+    </tr>
+    <tr>
+        <th>Home Type</th>
+        <td>{{listing.hometype}}</td>
+
+    </tr>
+    <tr>
+        <th>Bathrooms/WCs</th>
+        <td>{{listing.numwcbath|floatformat:"0"}}</td>
+
+    </tr>
+    <tr>
+        <th>Bedrooms</th>
+        <td>{{listing.numbedrooms|floatformat:"0"}}</td>
+
+
+    </tr>
+    <tr>
+        <th>Parking</th>
+        {% if listing.parking != -1.0 %}
+        <td>{{listing.parking|floatformat:"0" }}</td>
+        {% endif %}
+
+    </tr>
+    <tr>
+        <th>Price per Sqm</th>
+        <td>{{listing.pricepersqm|floatformat:"0" }}</td>
+
+    </tr>
+    <tr>
+        <th>Living Rooms</th>
+        {% if listing.livingrooms != -1.0 %}
+        <td>{{listing.livingrooms|floatformat:"0" }}</td>
+        {% endif %}
+
+    </tr>
+    <tr>
+        <th>Kitchens</th>
+        {% if listing.kitchens != -1.0 %}
+        <td>{{ listing.kitchens|floatformat:"0" }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        <th>Building Zone</th>
+        {% if listing.buildingzone != "-1.0" %}
+        <td>{{ listing.buildingzone|floatformat:"0" }}</td>
+        {% endif %}
+    </tr>
+    <tr>
+        <th>Energy Category</th>
+        <td>{{ listing.energycat }}</td>
+
+    </tr>
+
+</table>
+<br>
+<p>Detailed Description: {{features}}</p>
+
+<a href="javascript:history.back()">Back to Listings</a>
+<a href="/">Back to Search</a>
+</body>
+</html>

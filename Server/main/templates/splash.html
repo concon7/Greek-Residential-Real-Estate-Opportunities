@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+
+    <title>Greek Residential RE Listings</title>
+
+</head>
+<body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script crossorigin="anonymous"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-half">
+                <h1>Opportunities in Greek Residential Real Estate Market</h1>
+            </div>
+            <div class="column is-half">
+                <form action="/search" method="POST">
+                    {% csrf_token %}
+                    <div>
+                        <select id="home_type" name="home_type">
+                            <option value="">All</option>
+                            <option value="Bungalow">Bungalow</option>
+                            <option value="Villa">Villa</option>
+                            <option value="Building">Building</option>
+                            <option value="Mezonet">Mezonet</option>
+                            <option value="House">House</option>
+                            <option value="Studio">Studio</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="BlockFlats">BlockFlats</option>
+                            <option value="Loft">Loft</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input name="std_min" placeholder="min STD" type="number" step="any"/>
+                        <input name="std_max" placeholder="max STD" type="number" step="any"/>
+                    </div>
+                    <div>
+                        <input name="no_listings" placeholder="Number of Listings" type="number" min="0"/>
+                    </div>
+                    <div>
+                        <input type="submit" value="search"/>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
