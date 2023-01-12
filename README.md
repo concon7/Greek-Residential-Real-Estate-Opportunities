@@ -1,6 +1,6 @@
 > Constantine Constantinidis, con7
 
-# **Final Project - Greek Residential Real Estate Opportunities**
+# **Greek Residential Real Estate Opportunities**
 
 ## How to Run
 requirements.txt contains all necessary packages in order to run everything.
