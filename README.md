@@ -1,4 +1,4 @@
-> Constantine Constantinidis, con7
+> Constantine Constantinidis
 
 # **Greek Residential Real Estate Opportunities**
 
